@@ -52,3 +52,29 @@ def random():
     q.pop(0)
     print(q)
 
+def memoize(f):
+    memo = {}
+    def helper(x):
+        if x not in memo:
+            memo[x] = f(x)
+        return memo[x]
+    return helper
+
+def fib(x):
+    s = {}
+    if x <= 0:
+        return 0
+    elif x is 1:
+        return 1
+    else:
+        return fib(x - 1) + fib(x -2)
+
+def printrec(list):
+    if len(list) > 0:
+        print(list[0])
+
+
+def multiples3(n):
+    #f(n) = 3 * n
+    pass
+
